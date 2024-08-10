@@ -18,7 +18,7 @@ Feature: Login to the application
     Examples:
       | user-type |
       | admin     |
-      | studen    |
+      | student   |
 
 
 
