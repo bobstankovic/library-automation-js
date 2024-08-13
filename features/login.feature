@@ -11,14 +11,14 @@ Feature: Login to the application
     Given user is already on the login page
 @lib-01-01
   Scenario Outline: Verify users can login with valid credentials
-    When user enters valid username '<user-type>'
-    And user enters valid password '<user-type>'
+    When user enters valid username "<user-type>"
+    And user enters valid password "<user-type>"
     And user clicks the login button
     Then user login succussfully to the homepage
     Examples:
       | user-type |
       | admin     |
-      | studen    |
+      | student   |
 
 
 
