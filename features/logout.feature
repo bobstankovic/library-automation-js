@@ -17,7 +17,7 @@ Feature: Logout from the application
         And click the logout button
         Then user should be logged out from the app
 
-    Example:
+    Examples:
             | user-type |
             | admin     |
             | student   |

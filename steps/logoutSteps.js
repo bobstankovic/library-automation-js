@@ -7,14 +7,12 @@ import { PageManager } from "../globalPagesSetup.js";
 // WRITE YOUR STEP DEFINITIONS HERE...
 
 Given('user is already logged in as {string}', async function (string) {
-    await PageManager.loginPage.enterUsername("student5@library");
-    await PageManager.loginPage.enterPassword("libraryUser");
-    await PageManager.loginPage.clickLoginButton();
+    await PageManager.loginPage.login(string);
 });
 
 When('use click user profile on top right corner of the page', async function () {
   // Implement logic to click user profile
-  await PageManager.dashboardPage.userprofileImage.check();
+  await PageManager.dashboardPage.userprofileImage.click();
 });
 
 When('click the logout button', async function () {
@@ -24,5 +22,5 @@ When('click the logout button', async function () {
 
 Then('user should be logged out from the app', async function () {
   // Implement logic to verify user logout
-  await expect(PageManager.page).toHaveTitle("login - Libary");
+  await expect(PageManager.page).toHaveTitle("Login - Library");
 });
