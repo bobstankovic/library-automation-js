@@ -7,6 +7,20 @@ Feature: Logout from the application
 
 
     # TODO: verify users can logout from the app
+    Background:
+        Given user is already on the login page
 
-    
-    #? Should there be more scenarios for this user story? Feel free to add more scenarios.
+@lib-02-01
+    Scenario Outline: verify user can logout from homepage
+        Given user is already logged in as "<user-type>"
+        When use click user profile on top right corner of the page
+        And click the logout button
+        Then user should be logged out from the app
+
+    Examples:
+            | user-type |
+            | admin     |
+            | student   |
+
+
+#? Should there be more scenarios for this user story? Feel free to add more scenarios.
