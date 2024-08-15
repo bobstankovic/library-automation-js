@@ -9,7 +9,19 @@ Feature: Book Categories
     #*      , Biography/Autobiography, Romance, Short Story, Essay, Memoir, Poetry
 
 
+    @lib-03-01
     # TODO: verify users see 21 book categories
+    Scenario Outline: Verify that user sees 21 book categories
+     Given user is already on the login page
+     And user is already logged in as "<user-type>"
+     When user clicks Books link
+     And user clicks the book categories drop down box
+     Then user should see 21 book categories
+     Examples:
+            | user-type |
+            | admin     |
+            | student   |
+
 
     # TODO: Verify that all 21 book categories are displayed under the Boook Categories drop down
 
