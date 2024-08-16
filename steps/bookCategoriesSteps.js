@@ -16,5 +16,9 @@ When('user clicks the book categories drop down box', async function () {
 });
 
 Then('user should see {int} book categories', async function (int) {
-  await expect(PageManager.booksPage.booksDropdown.locator('option')).toHaveCount(int);
+  await expect(PageManager.booksPage.booksDropdown.locator("option")).toHaveCount(int);
+});
+
+Then('book category name {string} should be included in the categories', async function (string) {
+  
 });

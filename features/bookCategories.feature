@@ -23,7 +23,19 @@ Feature: Book Categories
             | student   |
 
 
-    # TODO: Verify that all 21 book categories are displayed under the Boook Categories drop down
 
-    
+    @lib-03-02
+    # TODO: Verify that all 21 book categories are displayed under the Boook Categories drop down
+    Scenario Outline: Verify that all 21 books are dusplayed in exact order for both admin and student users
+     Given user is already on the login page
+     And user is already logged in as "<user-type>"
+     When user clicks Books link
+     And user clicks the book categories drop down box
+     Then book category name "<category>" should be included in the categories
+
+     Examples:
+            | user-type | category             |
+            | admin     | ALL                  |
+            | admin     | Action and Adventure |
+
     #? Should there be more scenarios for this user story? Feel free to add more scenarios.
